@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies Search</title>
+    <%- include('./templates/head'); %>
 </head>
-<body>
-    <h1>Movies Search</h1>
+
+<body class="container-fluid text-center">
+
+    <header>  <%- include('./templates/header'); %> </header>
+
+   
     <form action='/search' method="post">
         <input type="text" name="movie" placeholder="Search for a movie" required/>
-        <button type="submit">Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
     </form>    
-    
-    
-
+ 
+     
 </body>
 </html>
