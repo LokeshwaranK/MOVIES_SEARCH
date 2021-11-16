@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Search</title>
+</head>
+<body>
+    <a href="/">back to home</a>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Released Date</th>
+            <th>Genre</th>
+            <th>Duration</th>
+            <th>Country</th>
+            <th>Director</th>
+         </tr>   
+       <% data.forEach((movie)=>{ %>
+             <tr>
+                 <td><%=movie._source.title%></td>
+                 <td><%=movie._source.date_published%></td>
+                 <td><%=movie._source.genre%></td>
+                 <td><%=movie._source.duration%></td>
+                 <td><%=movie._source.country%></td>
+                 <td><%=movie._source.director%></td>
+             </tr>    
+         <% }) %>   
+    </table>    
+</body>
+</html>

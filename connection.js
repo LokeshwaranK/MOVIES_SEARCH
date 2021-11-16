@@ -5,8 +5,8 @@ const client = elasticsearch.Client({
   requestTimeout: 300000,
 });
 
-client.cluster.health({}, function (err, resp, status) {
-  console.log("-- Client Health --", resp);
+client.cluster.health( function (err, resp, status) {
+  console.log("Cluster status -", status);
 });
 
 module.exports = client;

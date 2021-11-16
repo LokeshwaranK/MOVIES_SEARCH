@@ -2,7 +2,7 @@ const client = require("./connection.js");
 const dataset = require("./movies.json");
 const moviesList = [];
 
-const makebulk = function (dataset, callback) {
+/*const makebulk = function (dataset, callback) {
   for (let current in dataset) {
     moviesList.push(
       {
@@ -65,4 +65,29 @@ makebulk(dataset, function (response) {
   indexall(response, function (response) {
     console.log("feeded into elastic search");
   });
+});
+
+*/
+
+
+
+client.search({  
+  index: 'imdbmovies',
+  type: 'movies_search',
+  size: 20,
+  body: {
+    query: {
+      match: { "title": "Miss Jerry" },
+    },
+    sort: { "date_published": { "order": "asc" } },
+  }
+},function (error, response,status) {
+    if (error){
+      console.log("search error: "+error)
+    }
+    else {
+      console.log("--- Response ---");
+      console.log(response.hits.hits[0]);
+      console.log(response.hits.hits[19]);
+    }
 });
