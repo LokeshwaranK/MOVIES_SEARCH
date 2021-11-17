@@ -22,9 +22,9 @@ const route = require('./source/routes/route.js');
 app.use('/', route);
 app.use('/search', route);
 
+const host = 'https://movies-search-ejs.herokuapp.com';
 
 
-
-app.listen(port || process.env.PORT, ()=>{
+app.listen(port || process.env.PORT,host, ()=>{
     console.log('server started');
 })
