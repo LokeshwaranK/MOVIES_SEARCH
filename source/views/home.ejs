@@ -4,16 +4,16 @@
     <%- include('./templates/head'); %>
 </head>
 
-<body class="container-fluid text-center">
+<body class="container-fluid text-center" style="background-color: #393E46;">
 
     <header>  <%- include('./templates/header'); %> </header>
-
-   
-    <form action='/search' method="post">
-        <input type="text" name="movie" placeholder="Search for a movie" required/>
-        <button type="submit" class="btn btn-primary">Search</button>
-    </form>    
  
+   <div class="container-fluid p-5">
+    <form action='/search' method="post" class="form-group m-5" style="border-radius: 5px;">
+        <input type="text" name="movie" placeholder="Search for a movie" class="form-control" required/>
+        <button type="submit" class="mt-5 btn" style="background-color: #00ADB5; color: white;">Search</button>
+    </form>    
+   </div>
      
 </body>
 </html>
