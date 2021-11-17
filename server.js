@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 
 
@@ -22,9 +22,9 @@ const route = require('./source/routes/route.js');
 app.use('/', route);
 app.use('/search', route);
 
-const host = 'https://movies-search-ejs.herokuapp.com';
 
 
-app.listen(port || process.env.PORT,host, ()=>{
+
+app.listen(port, ()=>{
     console.log('server started');
 })
