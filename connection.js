@@ -1,7 +1,7 @@
 const elasticsearch = require("elasticsearch");
 
 const client = elasticsearch.Client({
-  host: "",
+  host: "https://elastic:2LzBiAKhABLMDXJUFwDeoskw@my-deployment-d2554c.es.us-central1.gcp.cloud.es.io:9243/",
   requestTimeout: 30000,
 });
 
