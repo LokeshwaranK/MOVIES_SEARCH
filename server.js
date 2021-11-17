@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 
 const app = express();
-const port = 4000 || process.env.PORT;
+const port = 4000;
 
 
 
@@ -25,6 +25,6 @@ app.use('/search', route);
 
 
 
-app.listen(port, ()=>{
+app.listen(port || process.env.PORT, ()=>{
     console.log('server started');
 })
