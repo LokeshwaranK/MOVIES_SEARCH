@@ -2,17 +2,35 @@
 <html lang="en">
 <head>
     <%- include('./templates/head.ejs'); %>
+    <style>
+        .page-item.active .page-link{
+            background-color: #00ADB5;
+            color: white;
+            border-color: #00ADB5;
+        }
+       .page-link, .page-link:hover{
+            color: #00ADB5;
+            background-color: #393E46;
+        }
+        .page-item.disabled .page-link {
+            background-color: #393E46;
+            color: white;
+        }
+    </style>    
 </head>
    
 <body class="container-fluid bg" style="background-color: #393E46; color: #00ADB5;">
 
     <header>  <%- include('./templates/header'); %> </header>
 
-    <div class="container-fluid m-3">
-        <a href="/" data-toggle="tooltip" title="Click here to Home Page">Back</a>
+    
+
+    <div style="display: flex;flex-direction: row-reverse;margin: 35px;">
+        <a href="/" data-toggle="tooltip" title="Click here to Home Page" class="btn btn-primary"
+        style="background-color: #00ADB5; color: white; border: none;">Back</a>
       </div>
     
-    <div class="table-responsive m-3">
+    <div class="table-responsive my-5">
     <table id="table" 
       class="table table-hover table-info">
       <thead>
@@ -46,10 +64,6 @@
 
  
 <script>
-
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();   
-      });
 
     $(document).ready(function() {
           $('#table').DataTable({
